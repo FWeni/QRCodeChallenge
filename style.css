@@ -1,16 +1,102 @@
 @import url("https://fonts.googleapis.com/css?family=Outfit");
 
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+
 body {
     margin: 0;
-    padding: 0;
-    background-color: hsl(220, 15%, 55%);
+    padding: 1rem;
+    background-color: hsl(218, 46%, 86%);
+
+    text-align: center;
+    font-family: 'Outfit', 'serif';
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .card {
-    height: 500px;
-    width: 350px;
-    margin: 50px auto;
-    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100svb;
+    max-width: 20rem;
+    margin-bottom: 2rem;
+
     border-style: solid;
     border-color: #FFFFFF;
     border-radius: 15px;
@@ -24,52 +110,30 @@ body {
 }
 
 .qrcode {
-    width: 100%;
-    border-radius: 5%;
+    border-radius: 15px;
+    padding: 0px 10px 0px 10px;
+    max-width: 100%;
+    max-height: 100%;
 }
 
-h3 {
-    font-family: 'Outfit', 'serif';
-    text-align: center;
-    font-weight: 700;
+.label {
+    margin-bottom: 2rem;
 }
 
 p {
-    font-family: 'Outfit','serif';
-    font-size: 15px;
-    color: hsl(212, 45%, 89%);
-    text-align: center;
-    font-weight: 400;
+    font-size: 0.938rem;
+    color: hsl(212, 14%, 59%);
 }
 
-.attribution { 
-    font-size: 11px; 
-    text-align: center;
+.paragraph {
+    padding: 0px 10px 0px 10px;
 }
 
 .attribution a { 
     color: hsl(228, 45%, 44%); 
 }
 
-
-@media only screen and (max-width: 375px) {
-
-    .qrcode {
-        width: 100%;
-        border-radius: 2%;
-    }
-
-    .card {
-
-        height: 450px;
-        width: 300px;
-        margin: 50px auto;
-        padding: 10px;
-        border-style: solid;
-        border-color: #FFFFFF;
-        border-radius: 5px;
-        background-color: #FFFFFF;
-    
-    }
-
+.pgtag {
+    color: #4f7599;
 }
+
